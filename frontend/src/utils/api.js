@@ -132,7 +132,7 @@ class Api {
 }
 
 const newApi = new Api({
-  baseUrl: 'https://mestogustera-api.nomoredomains.monster',
+  baseUrl: 'https://mestogustera-api.nomoredomains.monster/',
   headers: {
     // authorization: '29d18f54-01ca-4da2-8a42-facb1810bfd5',
     Authorization: `Bearer ${localStorage.getItem('jwt')}`,
