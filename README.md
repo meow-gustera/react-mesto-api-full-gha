@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.96.48
+IP 51.250.96.48
 
 Frontend https://mestogustera.nomoredomains.monster
 
