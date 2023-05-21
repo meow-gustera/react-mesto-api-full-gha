@@ -1,0 +1,16 @@
+.element__photo {
+  height: 284px;
+  width: 282px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+@media  screen and (max-width: 1023px) {
+  .element__photo {
+    height: 282px;
+  }
+}
+
+.element__photo:hover {
+  cursor: pointer;
+}

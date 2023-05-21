@@ -1,0 +1,25 @@
+.auth__input {
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  outline: none;
+  width: 358px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding-bottom: 13px;
+  font-family: 'Inter';
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+
+}
+
+.auth__input:invalid {
+  color: #CCCCCC;
+}
+

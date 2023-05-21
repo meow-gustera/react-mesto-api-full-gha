@@ -1,0 +1,33 @@
+.popup-edit__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  width: 358px;
+  margin: 0 auto;
+  padding: 29px 0 10px;
+}
+
+.popup-edit__input:first-child {
+  padding-top: 20px;
+}
+
+.popup-edit__input:last-child {
+  border: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .popup-edit__input {
+    width: 234px;
+    padding: 28px 0 9px;
+  }
+}

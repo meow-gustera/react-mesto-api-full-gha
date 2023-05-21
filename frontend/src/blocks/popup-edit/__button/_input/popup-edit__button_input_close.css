@@ -1,0 +1,29 @@
+.popup-edit__button_input_close {
+  background: rgba(255,255,255,0.0);
+  background-image: url(../../../../images/Close_Icon.svg);
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: -43px;
+  top: -43px;
+  border: 0;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1023px) {
+  .popup-edit__button_input_close {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .popup-edit__button_input_close {
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: -37px;
+  }
+}

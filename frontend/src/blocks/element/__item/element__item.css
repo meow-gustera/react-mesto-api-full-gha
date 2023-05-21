@@ -1,0 +1,23 @@
+.element__item {
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 17px 20px 0;
+  max-width: 282px;
+  position: relative;
+}
+
+.element__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+@media  screen and (max-width: 1023px) {
+  .element__item {
+    margin: 0 0 20px 0;
+  }
+  .element__item:nth-child(3n) {
+    margin: 0 0 20px 0;
+  }
+  .element__item:last-child {
+    margin: 0;
+  }
+}
