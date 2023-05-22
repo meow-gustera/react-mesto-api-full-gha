@@ -19,8 +19,6 @@ import InfoTooltip from './InfoTooltip.js';
 import ProtectedRoute from './ProtectedRoute.js';
 import { Navigate } from "react-router-dom";
 
-
-
 function App() {
   const [currentUser, setUserInfo] = useState({});
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -56,7 +54,7 @@ function App() {
   };
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
 
     newApi.changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {

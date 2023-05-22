@@ -154,7 +154,7 @@ class Api {
 }
 
 const newApi = new Api({
-  baseUrl: 'http://localhost:3000/',
+  baseUrl: 'https://mestogustera-api.nomoredomains.monster',
   headers: {
     'Content-Type': 'application/json'
   }
