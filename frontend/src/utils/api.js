@@ -17,7 +17,10 @@ class Api {
   getInitialCards() {
     return fetch(`${this._baseUrl}cards`, {
       method: "GET",
-      headers: this._headers,
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         return this._checkStatus(res);
@@ -28,7 +31,10 @@ class Api {
   postNewCard(name, link) {
     return fetch(`${this._baseUrl}cards`, {
       method: "POST",
-      headers: this._headers,
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      },
       body: JSON.stringify({
         name: name,
         link: link
@@ -43,7 +49,10 @@ class Api {
   getProfileData() {
     return fetch(`${this._baseUrl}users/me`, {
       method: "GET",
-      headers: this._headers,
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         return this._checkStatus(res);
@@ -54,8 +63,10 @@ class Api {
   editProfile(newName, newAbout) {
     return fetch(`${this._baseUrl}users/me`, {
       method: "PATCH",
-      headers: this._headers,
-
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      },
       body: JSON.stringify({
         name: newName,
         about: newAbout
@@ -70,7 +81,10 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._baseUrl}cards/${cardId}`, {
       method: "DELETE",
-      headers: this._headers,
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         return this._checkStatus(res);
@@ -81,8 +95,10 @@ class Api {
   editAvatar(newAvatar) {
     return fetch(`${this._baseUrl}users/me/avatar`, {
       method: "PATCH",
-      headers: this._headers,
-
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      },
       body: JSON.stringify(
         newAvatar
       )
@@ -96,7 +112,10 @@ class Api {
   likeCard(cardId) {
     return fetch(`${this._baseUrl}cards/${cardId}/likes`, {
       method: "PUT",
-      headers: this._headers,
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         return this._checkStatus(res);
@@ -107,7 +126,10 @@ class Api {
   removeLike(cardId) {
     return fetch(`${this._baseUrl}cards/${cardId}/likes`, {
       method: "DELETE",
-      headers: this._headers,
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         return this._checkStatus(res);
@@ -132,10 +154,8 @@ class Api {
 }
 
 const newApi = new Api({
-  baseUrl: 'https://mestogustera-api.nomoredomains.monster/',
+  baseUrl: 'http://localhost:3000/',
   headers: {
-    // authorization: '29d18f54-01ca-4da2-8a42-facb1810bfd5',
-    Authorization: `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json'
   }
 });

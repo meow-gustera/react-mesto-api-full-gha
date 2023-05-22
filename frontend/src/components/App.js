@@ -83,21 +83,21 @@ function App() {
       authApi.getAuthUserData(localStorage.getItem('jwt'))
         .then((res) => {
           setLoggedIn(true);
-          setUserEmail(res.data.email)
+          setUserEmail(res.email)
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        newApi.preloadInfo()
+        .then(([profileData, cards]) => {
+          setUserInfo(profileData);
+          setCards(cards);
         })
         .catch((err) => {
           console.log(err);
         })
     }
-    newApi.preloadInfo()
-      .then(([profileData, cards]) => {
-        setUserInfo(profileData);
-        setCards(cards);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }, []);
+  }, [loggedIn]);
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
@@ -184,7 +184,10 @@ function App() {
         <Header loggedIn={loggedIn} userEmail={userEmail} handleExit={handleExit} />
 
         <Routes>
-
+          {/* для регистрации пользователя; */}
+          <Route path="/sign-up" element={<Register signUpUser={signUpUser} />} > </Route>
+          {/*для авторизации пользователя.*/}
+          <Route path="/sign-in" element={loggedIn ? <Navigate to="/" replace /> : <Login signInUser={signInUser} />} />
           <Route path="/"
             element={<ProtectedRoute
               element={Main}
@@ -196,12 +199,6 @@ function App() {
               onCardLike={handleCardLike}
               onCardDelete={handleCardDelete}
               loggedIn={loggedIn} />} />
-
-          {/* для регистрации пользователя; */}
-          <Route path="/sign-up" element={<Register signUpUser={signUpUser} />} > </Route>
-          {/*для авторизации пользователя.*/}
-          <Route path="/sign-in" element={loggedIn ? <Navigate to="/" replace /> : <Login signInUser={signInUser} />} />
-
         </Routes>
         <Footer />
 

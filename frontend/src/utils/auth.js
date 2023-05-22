@@ -59,7 +59,7 @@ class Auth {
 }
 
 const authApi = new Auth({
-  baseUrl: 'https://mestogustera-api.nomoredomains.monster/',
+  baseUrl: 'http://localhost:3000/',
   headers: {
     'Content-Type': 'application/json'
   }
