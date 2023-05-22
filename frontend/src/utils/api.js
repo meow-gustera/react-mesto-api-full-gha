@@ -154,7 +154,7 @@ class Api {
 }
 
 const newApi = new Api({
-  baseUrl: 'https://mestogustera-api.nomoredomains.monster',
+  baseUrl: 'https://mestogustera-api.nomoredomains.monster/',
   headers: {
     'Content-Type': 'application/json'
   }
